@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/repair")
+@RequestMapping("/api/repairs")
 public class RepairController {
     @Autowired
     RepairService repairService;
