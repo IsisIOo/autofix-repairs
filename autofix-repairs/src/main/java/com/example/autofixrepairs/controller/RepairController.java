@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/repairs")
+
+
 public class RepairController {
     @Autowired
     RepairService repairService;
@@ -55,17 +57,22 @@ public class RepairController {
         //Conseguimos los costos para colocarlo en el auto
         double totalAmount = detailService.getCostbyRepair(rec);
 
+        double precioNormal = detailService.precioSegunReparacionyMotor(rec);
+
         //IVA
-        double iva = detailService.IVASOLO(totalAmount);
+        double iva = detailService.IVASOLO(precioNormal);
+
+        double costonormal= precioNormal + iva;
 
         //recargos
-        double recargos = detailService.getCostRecharges( totalAmount, rec.getPatent());
+        double recargos = detailService.getCostRecharges( precioNormal, rec);
 
         //descuentos
-        double descuentos = detailService.DescuentosSegunHora1(rec.getPatent(), totalAmount);
+        double descuentos = detailService.DescuentosSegunHora1(rec, precioNormal);
 
         //Vamos a colocar cada uno de los componentes en el nuevo auto
         repairHistory.setId(rec.getId());
+        repairHistory.setPatent(rec.getPatent());
 
         //FECHAS CLIENTE
         repairHistory.setAdmissionHour(rec.getAdmissionHour());
@@ -73,7 +80,7 @@ public class RepairController {
         repairHistory.setAdmissionDateDay(rec.getAdmissionDateDay());
         repairHistory.setAdmissionDateMonth(rec.getAdmissionDateMonth());
 
-        //repairHistory.setRepairType(rec.getRepairType());
+        repairHistory.setRepairType(rec.getRepairType());
 
         //FECHAS TALLER
         repairHistory.setDepartureDateDay(rec.getDepartureDateDay());
@@ -95,7 +102,7 @@ public class RepairController {
         return ResponseEntity.ok(repairHistoryNew);
     }
 
-    @GetMapping("/byCar/{}")
+    @GetMapping("/byCar/{id}")
     public ResponseEntity<List<Repair>> getByStudentId(@PathVariable("carId") Long carId) {
         List<Repair> repairs = repairService.byCarId(carId);
         return ResponseEntity.ok(repairs);
