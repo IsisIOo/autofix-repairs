@@ -35,6 +35,21 @@ public class RepairController {
         return ResponseEntity.ok(recordHistory);
     }
 
+    //busca los que tengan el mismo tipo de reparacion
+    @GetMapping("/by-repair/{repairName}")
+    public ResponseEntity<List<Repair>> getRepairListByName(@PathVariable String repairName) {
+        List<Repair> repair = repairService.getRepairListByName(repairName);
+        return ResponseEntity.ok(repair);
+    }
+
+    @GetMapping("/Todos/{patent}")
+    public ResponseEntity<List<Repair>> getRepairByPatentTodos(@PathVariable String patent) {
+        List<Repair> recordHistory = repairService.getTodoslosrepairsDeunaPatente(patent);
+        return ResponseEntity.ok(recordHistory);
+    }
+
+
+
     @PostMapping("/")
     public ResponseEntity<Repair> saveRecord(@RequestBody Repair recordHistory) {
         Repair recordHistoryNew = repairService.saveRecord(recordHistory);
