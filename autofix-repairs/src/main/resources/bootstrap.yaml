@@ -1,21 +1,18 @@
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
 spring:
   application:
     name: autofix-repairs
   cloud:
     config:
       enabled: true
-      uri: http://localhost:8888
+      uri: http://config-server-service:8081
   datasource:
-    url: jdbc:postgresql://localhost:5432/db-repair
+    url: jdbc:postgresql://db-repair-service:5434/db-repair
     username: postgres
     password: isilinda
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
