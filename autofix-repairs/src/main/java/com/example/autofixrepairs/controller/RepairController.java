@@ -83,7 +83,7 @@ public class RepairController {
         double recargos = detailService.getCostRecharges( precioNormal, rec);
 
         //descuentos
-        double descuentos = detailService.DescuentosSegunHora1(rec, precioNormal);
+        double descuentos = detailService.getCostDiscounts(precioNormal, rec);
 
         //Vamos a colocar cada uno de los componentes en el nuevo auto
         repairHistory.setId(rec.getId());
@@ -122,10 +122,6 @@ public class RepairController {
         List<Repair> repairs = repairService.byCarId(carId);
         return ResponseEntity.ok(repairs);
     }
-
-
-
-
 
 
 }
