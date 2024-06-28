@@ -35,6 +35,14 @@ public class RepairController {
         return ResponseEntity.ok(recordHistory);
     }
 
+    //busca por id para usarla en los detalles
+    @GetMapping("/repair-id/{id}")
+    //recibe solo un registro
+    public ResponseEntity<Repair> getOneRepairById(@PathVariable Long id) {
+        Repair recordHistory = repairService.getOneRecordPORID(id);
+        return ResponseEntity.ok(recordHistory);
+    }
+
     //busca los que tengan el mismo tipo de reparacion
     @GetMapping("/by-repair/{repairName}")
     public ResponseEntity<List<Repair>> getRepairListByName(@PathVariable String repairName) {
@@ -123,5 +131,19 @@ public class RepairController {
         return ResponseEntity.ok(repairs);
     }
 
+    //para aplicar el descuento
+    @PostMapping("/updateRepairBONOMARCA/")
+    public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@RequestBody String patent){
+        Repair rep = repairService.getOneRecordRespository(patent);
+        double precioActual= rep.getTotalAmount();
+        double descuentoMarca = detailService.DescuentoSegunMarca(patent, precioActual);
+
+        //actualizamos datos
+
+        rep.setTotalAmount(rep.getTotalAmount()-descuentoMarca);
+        rep.setTotalDiscounts(rep.getTotalDiscounts()+descuentoMarca);
+        Repair repairHistoryNew = repairService.saveRecord(rep);
+        return ResponseEntity.ok(repairHistoryNew);
+    }
 
 }

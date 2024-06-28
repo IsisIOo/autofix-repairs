@@ -30,6 +30,11 @@ public class RepairService {
         return repairRepository.findByPatentOne(patent);
     }
 
+    //por id
+    public Repair getOneRecordPORID(Long id){
+        return repairRepository.findByIdE(id);
+    }
+
     public List<Repair> getTodoslosrepairsDeunaPatente(String patent){
         return repairRepository.findByPatentRepairs(patent);
     }

@@ -249,33 +249,29 @@ public class DetailService {
     public double DescuentoSegunMarca(String patent, double total_price) {
         //descuento segun marca
         String brand = getCar(patent).getBrand();
+        double total_price_brand =0;
         if (brand.toLowerCase().equals("toyota")) {
-            double total_price_brand = total_price * 0.1;
-            total_price = total_price - total_price_brand;
+            total_price_brand = total_price * 0.1;
             System.out.println("El descuento aplicado por la marca Toyota: " + total_price_brand);
         }
         if (brand.toLowerCase().equals("ford")) {
-            double total_price_brand = total_price * 0.15;
-            total_price = total_price - total_price_brand;
+            total_price_brand = total_price * 0.15;
             System.out.println("El descuento aplicado por la marca Ford: " + total_price_brand);
         }
         if (brand.toLowerCase().equals("hyundai")) {
-            double total_price_brand = total_price * 0.2;
-            total_price = total_price - total_price_brand;
+            total_price_brand = total_price * 0.2;
             System.out.println("El descuento aplicado por la marca Hyundai: " + total_price_brand);
         }
         if (brand.toLowerCase().equals("honda")) {
-            double total_price_brand = total_price * 0.25;
-            total_price = total_price - total_price_brand;
+            total_price_brand = total_price * 0.25;
             System.out.println("El descuento aplicado por la marca Honda: " + total_price_brand);
         }
 
         else {
-            total_price = total_price;
             System.out.println("No se aplicó descuento por marca");
         }
         System.out.println("Precio total de la reparación con descuento por marca: " + total_price);
-        return total_price;
+        return total_price_brand;
     }
 
     //bototottottoon
