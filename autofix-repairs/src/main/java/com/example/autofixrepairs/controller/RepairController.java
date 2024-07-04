@@ -132,7 +132,7 @@ public class RepairController {
     }
 
     //para aplicar el descuento
-    @PostMapping("/updateRepairBONOMARCA/")
+    @PostMapping("/updateRepairBONOMARCA/{patent}")
     public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@RequestBody String patent){
         Repair rep = repairService.getOneRecordRespository(patent);
         double precioActual= rep.getTotalAmount();
