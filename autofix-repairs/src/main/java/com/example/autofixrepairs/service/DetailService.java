@@ -109,7 +109,7 @@ public class DetailService {
                 }
             }
 
-            else if (motor.toLowerCase().equals("diesel")) {
+            if (motor.toLowerCase().equals("diesel")) {
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de frenos")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount();
                 }
@@ -145,7 +145,7 @@ public class DetailService {
                 }
             }
 
-            else if (motor.toLowerCase().equals("hibrido")) {
+            if (motor.toLowerCase().equals("hibrido")) {
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de frenos")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
@@ -181,7 +181,7 @@ public class DetailService {
                 }
             }
 
-            else if (motor.toLowerCase().equals("electrico")) {
+            if (motor.toLowerCase().equals("electrico")) {
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de frenos")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();
                 }
