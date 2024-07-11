@@ -64,7 +64,7 @@ public class RepairController {
         return ResponseEntity.ok(recordHistoryNew);
     }
 
-    @DeleteMapping("/repair-id/{id}")
+    @DeleteMapping("/repair-id-delete/{id}")
     public ResponseEntity<Boolean> deleteRecordById(@PathVariable Long id) throws Exception {
         var isDeleted = repairService.deleteRecord(id);
         return ResponseEntity.noContent().build();
@@ -131,12 +131,13 @@ public class RepairController {
         return ResponseEntity.ok(repairs);
     }
 
-    //para aplicar el descuento
-    @PostMapping("/updateRepairBONOMARCA/{patent}")
-    public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@RequestBody String patent){
-        Repair rep = repairService.getOneRecordRespository(patent);
+    //para aplicar el descuentO IGNORAR DE AQUI A ABAJO
+    @PutMapping("/updateRepairBONOMARCA/{id}")
+    public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@PathVariable Long id){
+        Repair rep = repairService.getOneRecordPORID(id);
+        String patent = rep.getPatent();
         double precioActual= rep.getTotalAmount();
-        double descuentoMarca = detailService.DescuentoSegunMarca(patent, precioActual);
+        double descuentoMarca = detailService.DescuentoSegunMarca1(patent, precioActual);
 
         //actualizamos datos
 
@@ -144,6 +145,16 @@ public class RepairController {
         rep.setTotalDiscounts(rep.getTotalDiscounts()+descuentoMarca);
         Repair repairHistoryNew = repairService.saveRecord(rep);
         return ResponseEntity.ok(repairHistoryNew);
+    }
+
+    @GetMapping("/marca/{id}")
+    public double marca(@PathVariable Long id){
+        Repair rep = repairService.getOneRecordPORID(id);
+        String patent = rep.getPatent();
+        double precioActual= rep.getTotalAmount();
+        double descuento = detailService.DescuentoSegunMarca1(patent, precioActual);
+
+        return descuento;
     }
 
 }

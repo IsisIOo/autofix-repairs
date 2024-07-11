@@ -86,30 +86,30 @@ public class DetailService {
                 if (repairtype.toLowerCase().contains("reparaciones de la transmisión")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount(); //4
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema eléctrico")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema electrico")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount();
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de escape")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación de neumáticos y ruedas")) {
+                if (repairtype.toLowerCase().contains("reparacion de neumaticos y ruedas")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparaciones de la suspensión y la dirección")) {
+                if (repairtype.toLowerCase().contains("reparaciones de la suspension y la direccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema de aire acondicionado y calefacción")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema de aire acondicionado y calefaccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount(); //9
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de combustible")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación y reemplazo del parabrisas y cristales")) {
+                if (repairtype.toLowerCase().contains("reparacion y reemplazo del parabrisas y cristales")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getGasolineAmount();
                 }
             }
 
-            if (motor.toLowerCase().equals("diesel")) {
+            else if (motor.toLowerCase().equals("diesel")) {
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de frenos")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount();
                 }
@@ -122,30 +122,30 @@ public class DetailService {
                 if (repairtype.toLowerCase().contains("reparaciones de la transmisión")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount(); //4
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema eléctrico")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema electrico")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount();//5
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de escape")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount(); //6
                 }
-                if (repairtype.toLowerCase().contains("reparación de neumáticos y ruedas")) {
+                if (repairtype.toLowerCase().contains("reparacion de neumaticos y ruedas")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount(); //7
                 }
-                if (repairtype.toLowerCase().contains("reparaciones de la suspensión y la dirección")) {
+                if (repairtype.toLowerCase().contains("reparaciones de la suspension y la direccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount(); //8
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema de aire acondicionado y calefacción")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema de aire acondicionado y calefaccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount(); //9
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de combustible")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount(); //10
                 }
-                if (repairtype.toLowerCase().contains("reparación y reemplazo del parabrisas y cristales")) {
+                if (repairtype.toLowerCase().contains("reparacion y reemplazo del parabrisas y cristales")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getDieselAmount();
                 }
             }
 
-            if (motor.toLowerCase().equals("híbrido")) {
+            else if (motor.toLowerCase().equals("hibrido")) {
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de frenos")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
@@ -158,30 +158,30 @@ public class DetailService {
                 if (repairtype.toLowerCase().contains("reparaciones de la transmisión")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount(); //4
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema eléctrico")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema electrico")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de escape")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación de neumáticos y ruedas")) {
+                if (repairtype.toLowerCase().contains("reparacion de neumaticos y ruedas")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparaciones de la suspensión y la dirección")) {
+                if (repairtype.toLowerCase().contains("reparaciones de la suspension y la direccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema de aire acondicionado y calefacción")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema de aire acondicionado y calefaccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount(); //9
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de combustible")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación y reemplazo del parabrisas y cristales")) {
+                if (repairtype.toLowerCase().contains("reparacion y reemplazo del parabrisas y cristales")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getHibridAmount();
                 }
             }
 
-            if (motor.toLowerCase().equals("eléctrico")) {
+            else if (motor.toLowerCase().equals("electrico")) {
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de frenos")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();
                 }
@@ -194,30 +194,27 @@ public class DetailService {
                 if (repairtype.toLowerCase().contains("reparaciones de la transmisión")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();//4
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema eléctrico")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema electrico")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de escape")) {
                     total_price = total_price +0;
                 }
-                if (repairtype.toLowerCase().contains("reparación de neumáticos y ruedas")) {
+                if (repairtype.toLowerCase().contains("reparacion de neumaticos y ruedas")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparaciones de la suspensión y la dirección")) {
+                if (repairtype.toLowerCase().contains("reparaciones de la suspension y la direccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();
                 }
-                if (repairtype.toLowerCase().contains("reparación del sistema de aire acondicionado y calefacción")) {
+                if (repairtype.toLowerCase().contains("reparacion del sistema de aire acondicionado y calefaccion")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount(); //9
                 }
                 if (repairtype.toLowerCase().contains("reparaciones del sistema de combustible")) {
                     total_price = total_price ;
                 }
-                if (repairtype.toLowerCase().contains("reparación y reemplazo del parabrisas y cristales")) {
+                if (repairtype.toLowerCase().contains("reparacion y reemplazo del parabrisas y cristales")) {
                     total_price = total_price + getPriceRepairs(repairList.get(i)).getElectricAmount();
                 }
-            }
-            else{
-                total_price= total_price+0;
             }
         }
             System.out.println("el precio total sin nada. " + total_price);
@@ -275,31 +272,27 @@ public class DetailService {
     }
 
     //bototottottoon
-    public double DescuentoSegunMarca1(Repair rec, double total_price) {
+    public double DescuentoSegunMarca1(String patent, double total_price) {
         //descuento segun marca
         double total_price_brand = 0;
-        String brand = getCar(rec.getPatent()).getBrand();
+        String brand = getCar(patent).getBrand();
         if (brand.toLowerCase().equals("toyota")) {
-            total_price_brand = total_price -70000;
+            total_price_brand = 70000;
             System.out.println("El descuento aplicado por la marca Toyota: " + total_price_brand);
         }
-        if (brand.toLowerCase().equals("ford")) {
-             total_price_brand = total_price -50000;
+        else if (brand.toLowerCase().equals("ford")) {
+             total_price_brand = 50000;
             System.out.println("El descuento aplicado por la marca Ford: " + total_price_brand);
         }
-        if (brand.toLowerCase().equals("hyundai")) {
-            total_price_brand = total_price - 30000;
+        else if (brand.toLowerCase().equals("hyundai")) {
+            total_price_brand = 30000;
             System.out.println("El descuento aplicado por la marca Hyundai: " + total_price_brand);
         }
-        if (brand.toLowerCase().equals("honda")) {
-            total_price_brand = total_price - 40000;
+        else if (brand.toLowerCase().equals("honda")) {
+            total_price_brand = 40000;
             System.out.println("El descuento aplicado por la marca Honda: " + total_price_brand);
         }
 
-        else {
-            total_price = total_price;
-            System.out.println("No se aplicó descuento por marca");
-        }
         System.out.println("Precio total de la reparación con descuento por marca: " + total_price_brand);
         return total_price_brand;
     }
@@ -758,7 +751,7 @@ public double recargoPorAntiguedad1(Repair rec, double total_price) {
         }
         System.out.println("el monto que ingreso a la funcion de descuento por reparaciones: " + total_price);
         System.out.println("el descuento por reparaciones es:" + total_price_km);
-        return total_price;
+        return total_price_km;
     }
 
 }
