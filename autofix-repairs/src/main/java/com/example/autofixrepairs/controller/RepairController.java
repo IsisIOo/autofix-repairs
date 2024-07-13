@@ -133,19 +133,23 @@ public class RepairController {
 
     //para aplicar el descuentO IGNORAR DE AQUI A ABAJO
     @PutMapping("/updateRepairBONOMARCA/{id}")
-    public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@PathVariable Long id){
+    public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@PathVariable Long id) {
         Repair rep = repairService.getOneRecordPORID(id);
+        if (rep == null) {
+            return ResponseEntity.notFound().build();
+        }
         String patent = rep.getPatent();
-        double precioActual= rep.getTotalAmount();
+        double precioActual = rep.getTotalAmount();
         double descuentoMarca = detailService.DescuentoSegunMarca1(patent, precioActual);
 
-        //actualizamos datos
-
-        rep.setTotalAmount(rep.getTotalAmount()-descuentoMarca);
-        rep.setTotalDiscounts(rep.getTotalDiscounts()+descuentoMarca);
+        // Actualizamos datos
+        rep.setTotalAmount(rep.getTotalAmount() - descuentoMarca);
+        rep.setTotalDiscounts(rep.getTotalDiscounts() + descuentoMarca);
         Repair repairHistoryNew = repairService.saveRecord(rep);
+
         return ResponseEntity.ok(repairHistoryNew);
     }
+
 
     @GetMapping("/marca/{id}")
     public double marca(@PathVariable Long id){
