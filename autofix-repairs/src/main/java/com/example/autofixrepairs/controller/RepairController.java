@@ -56,8 +56,6 @@ public class RepairController {
         return ResponseEntity.ok(recordHistory);
     }
 
-
-
     @PostMapping("/")
     public ResponseEntity<Repair> saveRecord(@RequestBody Repair recordHistory) {
         Repair recordHistoryNew = repairService.saveRecord(recordHistory);
@@ -131,7 +129,6 @@ public class RepairController {
         return ResponseEntity.ok(repairs);
     }
 
-    //para aplicar el descuentO IGNORAR DE AQUI A ABAJO
     @PutMapping("/updateRepairBONOMARCA/{id}")
     public ResponseEntity<Repair> updateRecordDESCUENTOMARCA(@PathVariable Long id) {
         Repair rep = repairService.getOneRecordPORID(id);

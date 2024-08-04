@@ -10,12 +10,4 @@ public interface DetailsRepository extends JpaRepository<Details, Long> {
     //encontrar todos los detalles que llega a tener una pantente
     @Query(value = "SELECT * FROM details WHERE details.patent = :patent", nativeQuery = true)
     Details findByPatentDetails(@Param("patent") String patent);
-
-    //List<Details>
-
-    //encontrar un solo detalle por id
-
-
-
-
 }
